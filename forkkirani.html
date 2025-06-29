@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Surat Manis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-image: url('https://i.imgur.com/r9WXige.jpeg'); /* lilac floral background */
+      background-repeat: repeat;
+      background-size: cover;
+      font-family: 'Comic Neue', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #a86bd1;
+      z-index: 2;
+      margin-top: 30px;
+      text-shadow: 1px 1px #ffffff;
+    }
+
+    button {
+      background-color: #d9b3ff;
+      color: white;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+
+    button:hover {
+      background-color: #b88ce1;
+    }
+
+    .letter {
+      margin: 30px 20px;
+      padding: 20px;
+      background-color: rgba(230, 215, 255, 0.9); /* soft lilac box */
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      color: #4a4a4a;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      z-index: 2;
+    }
+
+    .letter.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .flower {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      animation: fall linear forwards;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    a {
+      color: #a86bd1;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💜 Surat Manis 💜</h1>
+  <button onclick="showLetter()">Klik untuk buka surat</button>
+<img src="https://i.imgur.com/Zivag0r.jpeg" alt="Gambar Tambahan" style="max-width: 300px; margin-top: 15px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); z-index:2;">
+
+  <div id="letter" class="letter">
+    <p>Halo Ukhty Kirani!💜</p>
+    <p>Ini surat aslinya yang dibuat dengan penuh cinta *aseeek, ya semoga ukhty suka sama hadiahnya, sehat selalu, bisa mengejar impiannya, jadi orang yang bermanfaat, intinya wish you all the best, ya walaupun telat suratnya tapi happy graduate!!!!, walaupun zad nya gitu tapi gapapa positifnya pasti banyak, termasuk ketemu ana hehe</p>
+<p>I am very grateful to have met you, and I am very happy that our topics of conversation are in line and connected. You are amazing, masya Allah. I am also sad because there is no longer a place where I can pour out my heart or ask for advice, but Allah is always there. Goodbye.</p>
+    <p>Jangan lupain ana ya ukhty, see you on the top!</p>
+
+    <p>
+    🪻 A donde vayas, lleva tu calma,
+tu risa suave y tu noble alma.
+No es el fin, es nuevo día,
+brillas con fuerza, luz que guía 🪻   </p>
+
+    <p>
+      📸 Instagram:
+      <a href="https://www.instagram.com/_andaluzblossom/" target="_blank">
+        @_andaluzblossom
+      </a>
+    </p>
+
+    <p><strong>💖 from La persona más adorable. Andalucía 💖</strong></p>
+
+    <!-- Gambar tambahan di bawah surat -->
+    <img src="https://i.imgur.com/Zivag0r.jpeg" alt="Hiasan Cantik" style="max-width: 100%; border-radius: 12px; margin-top: 20px;">
+  </div>
+
+  
+  <script>
+    function showLetter() {
+      document.getElementById('letter').classList.add('show');
+    }
+
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.innerText = '💜';
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      flower.style.opacity = Math.random();
+      flower.style.fontSize = (Math.random() * 10 + 20) + 'px';
+      document.body.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 7000);
+    }
+
+    setInterval(createFlower, 300);
+  </script>
+
+</body>
+</html>
